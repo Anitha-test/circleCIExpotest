@@ -19,6 +19,8 @@ public class PrintScreenMain {
 	    @Test
 	    public void navigateToAUrl() {
 	     System.out.println("Main Method Print Statement");
+	     String env = System.getenv("DUMMY");
+			System.out.println("Print the environment variable "+env);
 	    }
 	    @AfterMethod
 	    public void afterMethod() {
