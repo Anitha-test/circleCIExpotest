@@ -4,9 +4,6 @@ commands:
       env:
         default: "uat"
         type: string
-      env:
-        default: "dummy"
-        type: string
     steps:
       - run:
           command: mvn test -Denv=<<parameters.env>>
@@ -25,3 +22,18 @@ commands:
           path: target/surefire-reports
       - store_artifacts:
           path: report
+jobs:
+  chrome:
+    docker:
+      - image: cimg/openjdk:16.0.0-browsers
+    steps:
+      - browser-tools/install-chrome:
+          chrome-version: 91.0.4472.114
+      - browser-tools/install-chromedriver
+      - checkout
+      - run_test
+workflows:
+  version: 2
+  test_workflow:
+    jobs:
+      - chrome
