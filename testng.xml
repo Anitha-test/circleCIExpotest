@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testng Cucumber Suite" parallel="none" >
+  
+	<test verbose="2" name="Chrome test">
+		<classes>
+			<class name="circleCIexpo.circleCIexpo.PrintScreenMain" />
+		</classes>
+	</test> <!-- Default test -->
+</suite> <!-- Default suite -->
