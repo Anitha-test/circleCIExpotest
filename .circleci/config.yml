@@ -1,0 +1,27 @@
+commands:
+  run_maven:
+    parameters:
+      env:
+        default: "uat"
+        type: string
+      env:
+        default: "dummy"
+        type: string
+    steps:
+      - run:
+          command: mvn test -Denv=<<parameters.env>>
+          name: Run Tests
+		  
+  run_test:
+    steps:
+      - restore_cache:
+          key: maven-v1-{{ checksum "pom.xml" }}
+	  - run_maven
+      - save_cache:
+          key: maven-v1-{{ checksum "pom.xml" }}
+          paths:
+            - ~/.m2/repository
+      - store_test_results:
+          path: target/surefire-reports
+      - store_artifacts:
+          path: report
