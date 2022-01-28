@@ -11,12 +11,12 @@ commands:
       - run:
           command: mvn test -Denv=<<parameters.env>>
           name: Run Tests
-		  
+
   run_test:
     steps:
       - restore_cache:
           key: maven-v1-{{ checksum "pom.xml" }}
-	  - run_maven
+      - run_maven
       - save_cache:
           key: maven-v1-{{ checksum "pom.xml" }}
           paths:
