@@ -33,7 +33,7 @@ jobs:
       - image: cimg/openjdk:16.0.0-browsers
     steps:
       - browser-tools/install-chrome:
-          chrome-version: 91.0.4472.114
+          chrome-version: 85.0.4183.102
       - browser-tools/install-chromedriver
       - checkout
       - run_test
