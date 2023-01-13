@@ -29,14 +29,16 @@ commands:
           path: report
 jobs:
   chrome:
+    working_directory: /home/testam
     docker:
       - image: cimg/openjdk:16.0.0-browsers
     steps:
       - browser-tools/install-chrome:
           chrome-version: latest
       - browser-tools/install-chromedriver
-      - run: ls -ltrh /home/circleci/project
-      - run: ls -ltrh /home/circleci
+      - run: ls -ltrh /home/testam
+      - run: mkdir /home/testam
+      - checkout
       - run_test
 workflows:
   version: 2
