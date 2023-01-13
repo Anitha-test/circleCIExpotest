@@ -37,7 +37,6 @@ jobs:
       - browser-tools/install-chromedriver
       - run: ls -ltrh /home/circleci/project
       - run: ls -ltrh /home/circleci
-      - checkout
       - run_test
 workflows:
   version: 2
