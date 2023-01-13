@@ -29,7 +29,6 @@ commands:
           path: report
 jobs:
   chrome:
-    working_directory: /tmp/testam
     docker:
       - image: cimg/openjdk:16.0.0-browsers
     steps:
