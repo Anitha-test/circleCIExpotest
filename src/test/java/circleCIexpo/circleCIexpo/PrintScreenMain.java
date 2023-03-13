@@ -2,6 +2,7 @@ package circleCIexpo.circleCIexpo;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -21,8 +22,11 @@ public class PrintScreenMain {
 	     System.out.println("Main Method Print Statement 123");
 	     System.out.println("Changes made for only crazy erperiment branch");
 	     String env = System.getenv("DUMMY");
+             ChromeOptions chromeoptions = new ChromeOptions();
+	     chromeoptions.addArguments("--remote-allow-origins=*");
+	     
 	     WebDriverManager.chromedriver().setup();
-	     driver=new ChromeDriver();
+	     driver=new ChromeDriver(chromeoptions);
 	     driver.get("http://google.com");
 	     System.out.println("Print the environment variable "+env);
 	     System.out.println("Print the environment variable "+env);
