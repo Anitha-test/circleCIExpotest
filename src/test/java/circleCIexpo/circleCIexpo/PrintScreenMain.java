@@ -21,6 +21,7 @@ public class PrintScreenMain {
 	     System.out.println("Main Method Print Statement 123");
 	     System.out.println("Changes made for only crazy erperiment branch");
 	     String env = System.getenv("DUMMY");
+	     System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 	     ChromeOptions chromeOptions = new ChromeOptions();
 	    // chromeOptions.addArguments("--remote-allow-origins=*");
 	     ChromeDriver driver=new ChromeDriver(chromeOptions);
