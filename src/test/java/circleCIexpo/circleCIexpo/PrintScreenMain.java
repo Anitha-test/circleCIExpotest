@@ -22,7 +22,7 @@ public class PrintScreenMain {
 	     System.out.println("Changes made for only crazy erperiment branch");
 	     String env = System.getenv("DUMMY");
 	     WebDriverManager.chromedriver().setup();
-	     driver=new ChromeDriver(chromeOptions);
+	     driver=new ChromeDriver();
 	     driver.get("http://google.com");
 	     System.out.println("Print the environment variable "+env);
 	     System.out.println("Print the environment variable "+env);
