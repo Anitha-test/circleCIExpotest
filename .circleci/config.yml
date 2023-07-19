@@ -34,7 +34,7 @@ jobs:
     steps:
       - checkout
       - browser-tools/install-chrome:
-          chrome-version: 91.0.4472.114
+          chrome-version: latest
       - browser-tools/install-chromedriver
       - run_test
 workflows:
