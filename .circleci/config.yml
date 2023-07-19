@@ -32,10 +32,10 @@ jobs:
     docker:
       - image: cimg/openjdk:16.0.0-browsers
     steps:
-      - checkout
       - browser-tools/install-chrome:
-          chrome-version: 99.0.4844.51
+          chrome-version: latest
       - browser-tools/install-chromedriver
+      - checkout
       - run_test
 workflows:
   version: 2
