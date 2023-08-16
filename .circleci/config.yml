@@ -8,6 +8,8 @@ commands:
   notify_slack_error:
     steps:
      - slack/notify:
+          branch_pattern: crazy-experiment
+          channel: ABCXYZ
           event: fail
           template: basic_fail_1
   run_maven:
