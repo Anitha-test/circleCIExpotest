@@ -7,11 +7,15 @@ orbs:
 commands:
   notify_slack_error:
     steps:
-     - slack/notify:
-          branch_pattern: crazy-experiment
-          channel: ABCXYZ
+      - slack/notify:
           event: fail
           template: basic_fail_1
+
+  notify_slack_pass:
+    steps:
+      - slack/notify:
+          event: pass
+          template: basic_success_1
   run_maven:
     parameters:
       env:
@@ -46,6 +50,7 @@ jobs:
       - browser-tools/install-chromedriver
       - run_test
       - notify_slack_error
+      - notify_slack_pass
 workflows:
   version: 2
   test_workflow:
